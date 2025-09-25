@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Finalize sua compra na My Floricultura! Revise os produtos, calcule o total e conclua seu pedido de flores frescas com segurança.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras - My Floricultura!</title>
+    <link rel="icon" href="img/img5.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body id="carrinho-page">
+
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="img/logo.gif" alt="Logo My Floricultura" class="logo">
+                <h1>My Floricultura!</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="secao-carrinho">
+            <h2>Seu Carrinho</h2>
+            
+            <div id="lista-carrinho">
+                <p id="carrinho-vazio-msg">Seu carrinho está vazio.</p>
+            </div>
+
+            <div id="resumo-compra">
+                <h3>Resumo do Pedido</h3>
+                <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+                <p>Total: <span id="total-compra" class="total">R$ 0,00</span></p>
+            </div>
+            
+            <button id="btn-finalizar-compra">Finalizar Compra</button>
+        </section>
+
+        <section id="finalizacao-compra">
+            <h2>Dados para Entrega e Pagamento</h2>
+            <form id="form-finalizar">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+
+                <label for="endereco">Endereço de Entrega:</label>
+                <input type="text" id="endereco" required>
+
+                <label for="pagamento">Método de Pagamento:</label>
+                <select id="pagamento" required>
+                    <option value="cartao">Cartão de Crédito</option>
+                    <option value="pix">Pix</option>
+                    <option value="boleto">Boleto</option>
+                </select>
+
+                <button type="submit" id="btn-comprar">Confirmar Compra</button>
+            </form>
+        </section>
+        
+        <section id="compra-sucesso">
+            <h2>Obrigado pela sua compra!</h2>
+            <p>Seu pedido foi realizado com sucesso e está sendo processado. Você receberá a confirmação por e-mail.</p>
+            <a href="index.html" class="btn">Voltar para a loja</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Floricultura!. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="btn-top" title="Voltar ao Topo">↑</button>
+    <script src="script/script.js"></script>
+</body>
+</html>
