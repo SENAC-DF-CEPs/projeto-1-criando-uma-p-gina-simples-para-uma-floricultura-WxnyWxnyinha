@@ -1,5 +1,10 @@
+/* Correção de Box Model: Garante que padding e borda sejam incluídos na largura */
+* {
+    box-sizing: border-box; 
+}
+
 /* =================================================== */
-/* 1. VARIÁVEIS E BASE (My Melody Theme)               */
+/* 1. VARIÁVEIS E BASE (My Melody Theme) */
 /* =================================================== */
 
 :root {
@@ -25,10 +30,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    /* REGRAS CRUCIAIS PARA O STICKY FOOTER */
+    
+    /* REGRAS CRUCIAIS PARA STICKY FOOTER E FIX DE OVERFLOW */
     display: flex; 
     flex-direction: column;
-    min-height: 100vh; /* Ocupa 100% da altura da viewport */
+    min-height: 100vh; 
+    /* Garante que nada saia da tela horizontalmente */
+    overflow-x: hidden; 
 }
 
 h1, h2, h3 {
@@ -55,30 +63,34 @@ a:hover {
 }
 
 main {
-    padding: 20px 5%; /* Removendo o padding de cima/baixo para ter mais controle */
+    padding: 20px 5%;
     max-width: 1200px;
-    margin: 0 auto; /* Centraliza o bloco principal */
-    flex-grow: 1 1; 
+    margin: 0 auto; 
+    flex-grow: 1; 
+    /* Garante que o main ocupe a largura total de forma segura */
+    width: 100%; 
 }
 
 section {
-    padding: 40px 0;
+    padding: 60px 0; /* padding ajustado para 60px para dar respiro */
     margin-bottom: 20px;
+    /* Linha divisória removida para usar o secao-divisor */
 }
 
+/* --- NOVO ESTILO: DIVISORES COM MARGEM --- */
 .secao-divisor {
     content: '';
     display: block;
     width: 100%;
     /* Margem para descolar a linha do conteúdo acima */
-    margin: 20px auto 0; 
+    margin: 40px auto 0; 
     /* Estilo da linha */
     border-bottom: 2px dashed var(--cor-azul-bebe);
 }
 
 
 /* =================================================== */
-/* 2. HEADER, NAVEGAÇÃO E FOOTER                       */
+/* 2. HEADER, NAVEGAÇÃO E FOOTER */
 /* =================================================== */
 
 header {
@@ -101,7 +113,7 @@ nav {
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espaço entre a imagem e o título */
+    gap: 10px; 
 }
 
 .logo-container .logo {
@@ -110,7 +122,6 @@ nav {
 }
 
 .logo-container h1 {
-    /* Ajusta o h1 para que não fique com o alinhamento central */
     margin: 0;
     text-align: left; 
 }
@@ -144,7 +155,7 @@ footer {
     color: var(--cor-branco);
     text-align: center;
     padding: 15px 0;
-    margin-top: auto; 
+    margin-top: auto; /* Garante que o rodapé fique no final (Sticky Footer) */
 }
 
 
@@ -152,16 +163,16 @@ footer {
 /* 3. PÁGINA INICIAL (index.html) */
 /* =================================================== */
 
-/* --- Hero Section (IMAGEM DE FUNDO) --- */
+/* --- Hero Section (COM IMAGEM DE FUNDO) --- */
 #hero {
     /* Fundo da imagem */
-    background-image: url(../img/img1.jpg); 
-    background-size: cover; /* Ajusta a largura automaticamente e mantém a altura */
+    background-image: url('../img/img1.jpg'); 
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     
-    /* Cores e padding */
-    padding: 80px 40px;
+    /* Cores e padding ajustado para mostrar mais a imagem */
+    padding: 120px 40px; 
     text-align: center;
     border-radius: 15px; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
@@ -169,6 +180,9 @@ footer {
     /* Overlay sutil para o texto se destacar, mantendo a sensação fofa */
     background-color: rgba(255, 255, 255, 0.7); 
     background-blend-mode: overlay; 
+    
+    /* Margem para separar do próximo conteúdo */
+    margin-bottom: 40px; 
 }
 
 #hero h2, #hero p {
@@ -180,7 +194,6 @@ footer {
     background-color: var(--cor-azul-bebe); 
     transition: background-color 0.5s;
     box-shadow: 0 0 45px var(--cor-azul-bebe), 0 0 25px var(--cor-azul-bebe);
-    /* transform: translateY(-5px); */
     cursor: pointer;
 }
 
@@ -292,7 +305,9 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-top: 20px;
-    width: 80vw;
+    /* REMOVIDO: width: 80vw; para evitar overflow */
+    margin-left: auto; /* Centralização garantida */
+    margin-right: auto;
 }
 
 /* Esconde as seções que só devem aparecer com JS */
@@ -315,7 +330,6 @@ footer {
     align-items: center;
     padding: 10px 0;
     border-bottom: 1px dashed var(--cor-fundo-claro);
-    /* NOVO: Espaço entre as informações e o botão */
     gap: 15px; 
 }
 
@@ -337,7 +351,7 @@ footer {
 
 #resumo-compra {
     padding-top: 15px;
-    /* Borda no Rosa Doce */
+    /* Borda no Azul Bebê para contraste no carrinho */
     border-top: 2px dashed var(--cor-azul-bebe);
 }
 
@@ -384,7 +398,9 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
-    width: 80vw;
+    /* REMOVIDO: width: 80vw; para evitar overflow */
+    margin-left: auto; /* Centralização garantida */
+    margin-right: auto;
 }
 
 /* Garante que a seção de sucesso de contato comece escondida */
@@ -490,7 +506,7 @@ form button[type="submit"]:hover {
 
 #btn-top:hover {
     background-color: var(--cor-vermelho-cereja); /* Um hover fofo */
-    transform: translateY(-2px);
+    transform: translateY(-5px); /* Aumentei o movimento para ser mais notável */
 }
 
 /* =================================================== */
