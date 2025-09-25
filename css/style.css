@@ -55,9 +55,9 @@ a:hover {
 }
 
 main {
-    padding: 20px 5%;
+    padding: 20px 5%; /* Removendo o padding de cima/baixo para ter mais controle */
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centraliza o bloco principal */
     flex-grow: 1 1; 
 }
 
@@ -159,8 +159,6 @@ footer {
     background-size: cover; /* Ajusta a largura automaticamente e mantém a altura */
     background-position: center;
     background-repeat: no-repeat;
-    width: 80vw;
-    margin: 0 auto;
     
     /* Cores e padding */
     padding: 80px 40px;
