@@ -1,4 +1,4 @@
-# 🌸 Floricultura My Melody
+# 🌸 My Floricultura!
 
 Este projeto é uma página simples para uma floricultura, inspirada na personagem My Melody, com visual delicado, cores suaves e foco em uma experiência fofa e acolhedora.
 
