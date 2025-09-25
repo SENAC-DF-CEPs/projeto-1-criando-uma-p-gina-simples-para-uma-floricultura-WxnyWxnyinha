@@ -25,6 +25,10 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    /* REGRAS CRUCIAIS PARA O STICKY FOOTER */
+    display: flex; 
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa 100% da altura da viewport */
 }
 
 h1, h2, h3 {
@@ -54,6 +58,7 @@ main {
     padding: 20px 5%;
     max-width: 1200px;
     margin: 0 auto;
+    flex-grow: 1 1; 
 }
 
 section {
@@ -139,7 +144,7 @@ footer {
     color: var(--cor-branco);
     text-align: center;
     padding: 15px 0;
-    margin-top: 40px;
+    margin-top: auto; 
 }
 
 
@@ -154,6 +159,8 @@ footer {
     background-size: cover; /* Ajusta a largura automaticamente e mantém a altura */
     background-position: center;
     background-repeat: no-repeat;
+    width: 80vw;
+    margin: 0 auto;
     
     /* Cores e padding */
     padding: 80px 40px;
@@ -287,6 +294,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-top: 20px;
+    width: 80vw;
 }
 
 /* Esconde as seções que só devem aparecer com JS */
@@ -378,6 +386,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
+    width: 80vw;
 }
 
 /* Garante que a seção de sucesso de contato comece escondida */
