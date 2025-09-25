@@ -40,7 +40,7 @@ O visual e a paleta de cores são inspirados na personagem My Melody, trazendo t
 
 1. Clone este repositório:
    ```sh
-   git clone <url-do-repositorio>
+   git clone <https://github.com/SENAC-DF-CEPs/projeto-1-criando-uma-p-gina-simples-para-uma-floricultura-WxnyWxnyinha.git>
    ```
 2. Abra a pasta no VS Code ou outro editor.
 3. Abra o arquivo `index.html` no navegador para visualizar a página.
